@@ -8,7 +8,7 @@ Add a `dat.json` with any of those keys - all are optional - to the root of a da
 
 ```json
 {
-  "name": "A human friendly name",
+  "title": "A human friendly title",
   "author": "Author name with optional <email>"
 }
 ```
