@@ -17,6 +17,10 @@ Add a `dat.json` with any of those keys - all are optional - to the root of a da
 
 A short but descriptive human friendly title.
 
+### `.description`
+
+A one- or two-line description of the archive.
+
 ### `.author`
 
 The archive's author - the packager, not necessarily the data's author as well. Can be either an object with any of those keys:
