@@ -5,7 +5,8 @@ The WIP specification for the dat.json meta format.
 ```json
 {
   "title": "My paper library",
-  "author": "Julian Gruber <julian@juliangruber.com>"
+  "author": "Julian Gruber <julian@juliangruber.com>",
+  "url": "dat://c75ffb161a9965e47323ba9b76aa11f649504b0d2d5d062dcb3438d5aeadc187"
 }
 ```
 
@@ -20,6 +21,10 @@ A short but descriptive human friendly title.
 ### `.description`
 
 A one- or two-line description of the archive.
+
+### `.url`
+
+Url of the Dat archive. This will usually be the `dat://` then the archive key.
 
 ### `.author`
 
