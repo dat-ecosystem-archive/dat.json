@@ -6,7 +6,10 @@ The WIP specification for the dat.json meta format.
 {
   "title": "My paper library",
   "author": "Julian Gruber <julian@juliangruber.com>",
-  "url": "dat://c75ffb161a9965e47323ba9b76aa11f649504b0d2d5d062dcb3438d5aeadc187"
+  "url": "dat://c75ffb161a9965e47323ba9b76aa11f649504b0d2d5d062dcb3438d5aeadc187",
+  "links": {
+    "license": [{"href": "http://creativecommons.org/licenses/by-nc/2.5/", "title": "CC BY-NC 2.5"}]
+  }
 }
 ```
 
@@ -50,6 +53,34 @@ like for example:
 - `"Julian Gruber <julian@juliangruber.com>"`
 - `"Julian Gruber (https://juliangruber.com/)"`
 - `"Julian Gruber <julian@juliangruber.com> (https://juliangruber.com/)"`
+
+### `.links`
+
+An object containing a set of Web links from the Dat. It is a mapping of "rel" values to arrays of link objects, as follows:
+
+```json
+{
+  "rel-type": [{"href": "https://.../"}]
+}
+```
+
+The `.links` follows the same schema as [Web links](https://www.w3.org/TR/html5/document-metadata.html#the-link-element) and so any attribute which applies to a `<link>` will apply to these values. The one difference is how the `rel` value is handled: in this field, the `rel` is used as the key of the `links` map. Only one `rel` value should be used. If a link has additional rel values, it can specify them using the `rel` field on the link object. For instance, a link with the `rel` value of `"foo bar baz"` would look like this:
+
+```json
+{
+  "foo": [{"href": "https://.../", "rel": "bar baz"}]
+}
+```
+
+Links can be duplicated, and so it would also be possible to handle this case with 3 different link objects:
+
+```json
+{
+  "foo": [{"href": "https://.../"}],
+  "bar": [{"href": "https://.../"}],
+  "baz": [{"href": "https://.../"}],
+}
+```
 
 ## Support
 
